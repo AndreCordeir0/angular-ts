@@ -1,0 +1,18 @@
+<p-table [value]="jogadores" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Nickname</th>
+            <th>Carro</th>
+            <th>Saldo</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-jogador>
+        <tr>
+            <td>{{jogador.id}}</td>
+            <td>{{jogador.nickname}}</td>
+            <td>{{jogador.carro.nome}}</td>
+            <td>{{jogador.saldo}}</td>
+        </tr>
+    </ng-template>
+</p-table>
