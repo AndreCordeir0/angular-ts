@@ -1,5 +1,5 @@
+import { CarrosService } from './carros/service/carros.service';
 import { JogadoresService } from './service/jogadores.service';
-import { SegundoService } from './segundo/segundo.service';
 import { SegundoModule } from './segundo/segundo.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -10,6 +10,8 @@ import {DockModule} from 'primeng/dock';
 import { TableModule } from 'primeng/table';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {SkeletonModule} from 'primeng/skeleton';
+import {ButtonModule} from 'primeng/button';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +20,7 @@ import { PrimeiroComponent } from './primeiro/primeiro.component';
 import { JogadoresComponent } from './jogadores/jogadores.component';
 import { CarrosComponent } from './carros/carros.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -26,14 +29,17 @@ import { HomeComponent } from './home/home.component';
     PrimeiroComponent,
     JogadoresComponent,
     CarrosComponent,
-    HomeComponent   
+    HomeComponent,
+    LoginComponent   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    SkeletonModule,
     TableModule,
     SegundoModule,
+    ButtonModule,
     TabMenuModule,
     HttpClientModule,
     GMapModule,
@@ -41,7 +47,7 @@ import { HomeComponent } from './home/home.component';
     RouterModule
     
   ],
-  providers: [JogadoresService],
+  providers: [JogadoresService,CarrosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

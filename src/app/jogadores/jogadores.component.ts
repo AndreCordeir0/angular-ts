@@ -11,10 +11,14 @@ import { JogadoresService } from '../service/jogadores.service';
 export class JogadoresComponent implements OnInit {
  
 
-  constructor( private jogadoresService:JogadoresService) {  
-   }
-
 jogadores :Array<Jogador>=[]
+
+
+
+
+constructor( private jogadoresService:JogadoresService) {  
+  
+}
 
   ngOnInit(): void {
   this.listarJogadores()
@@ -23,8 +27,8 @@ listarJogadores(){
   this.jogadoresService.listarJogadores().subscribe(jogadores =>{
     setTimeout(() => {
       this.jogadores=jogadores;
-      console.log(jogadores);
-      
+
+     
     }, 400);
   });
 }

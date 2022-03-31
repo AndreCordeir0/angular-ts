@@ -9,12 +9,22 @@ import { Jogador } from '../objetos/Jogador';
 export class JogadoresService {
 
   private readonly API =`${environment.API}jogador`
+  private readonly APICAR =`${environment.API}carro`
 
   constructor(private $http:HttpClient) { }
 
 
 listarJogadores(){
   return this.$http.get<Jogador[]>(`${this.API}/todos`)
+}
+
+listarCarros(){
+  return this.$http.get<Jogador[]>(`${this.APICAR}/todos`)
+
+}
+
+alterarCarro(jogador:Jogador){
+return this.$http.put(`$(this.API)`,jogador)
 }
 
 
