@@ -1,3 +1,10 @@
-<p-tabMenu class="menu" [model]="items"></p-tabMenu>
 
+<div class="junta">
+    <p-tabMenu class="menu" *ngIf="mostrarMenu" [model]="items"></p-tabMenu>
+    <span  class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input  type="text" pInputText  placeholder="Search">         
+    </span>
+
+</div>
 <router-outlet></router-outlet>

@@ -1,3 +1,4 @@
+import { AuthService } from './login/auth.service';
 import { CarrosService } from './carros/service/carros.service';
 import { JogadoresService } from './service/jogadores.service';
 import { SegundoModule } from './segundo/segundo.module';
@@ -21,6 +22,7 @@ import { JogadoresComponent } from './jogadores/jogadores.component';
 import { CarrosComponent } from './carros/carros.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 @NgModule({
@@ -38,6 +40,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     SkeletonModule,
     TableModule,
+    InputTextModule,
     SegundoModule,
     ButtonModule,
     TabMenuModule,
@@ -47,7 +50,7 @@ import { LoginComponent } from './login/login.component';
     RouterModule
     
   ],
-  providers: [JogadoresService,CarrosService],
+  providers: [JogadoresService,CarrosService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

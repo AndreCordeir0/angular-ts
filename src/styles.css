@@ -1,7 +1,4 @@
 body{
-    background-color:  #212529;
-}
-:host /deep/ p-tabmenu {
-    background-color: olivedrab;
-    
+  background-color:#0e1315;
+
 }

@@ -1,7 +1,9 @@
+import { usuarioLogin } from './../login/usuarioLogin';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Jogador } from '../objetos/Jogador';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +29,8 @@ alterarCarro(jogador:Jogador){
 return this.$http.put(`$(this.API)`,jogador)
 }
 
+login(usuarioLogin:usuarioLogin):Observable<Jogador>{
+  return this.$http.post<Jogador>(`${this.API}/login`,usuarioLogin)
 
+}
 }

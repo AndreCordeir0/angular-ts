@@ -1,3 +1,4 @@
+import { Guards } from './guards/guards';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CarrosComponent } from './carros/carros.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'jogadores',component:JogadoresComponent},
   {path:'carros',component:CarrosComponent},
+  {path: 'home', component: HomeComponent, canActivate: [Guards]},
   {path:'login',component:LoginComponent}
 ];
 
