@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {SkeletonModule} from 'primeng/skeleton';
 import {ButtonModule} from 'primeng/button';
-
+import {DynamicDialogModule} from 'primeng/dynamicdialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +38,7 @@ import {InputTextModule} from 'primeng/inputtext';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    DynamicDialogModule,
     SkeletonModule,
     TableModule,
     InputTextModule,

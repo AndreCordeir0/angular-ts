@@ -1,6 +1,6 @@
 export class Jogador{
-    constructor() {
-        
+    public constructor(init?:Partial<Jogador>) {
+        Object.assign(this, init);
     }
 
     public id:any |undefined;

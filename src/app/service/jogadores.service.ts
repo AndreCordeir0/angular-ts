@@ -29,6 +29,11 @@ alterarCarro(jogador:Jogador){
 return this.$http.put(`$(this.API)`,jogador)
 }
 
+listarJogadorId(id:any):Observable<Jogador>{
+return this.$http.get<Jogador>(`$(this.API)/${id}`)
+}
+
+
 login(usuarioLogin:usuarioLogin):Observable<Jogador>{
   return this.$http.post<Jogador>(`${this.API}/login`,usuarioLogin)
 
