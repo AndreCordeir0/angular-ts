@@ -32,8 +32,22 @@
    -->
   <ng-container  *ngIf="mostrar && carroSelecionado">
     <div class="modal">
-        <span>{{carroSelecionado.id}}</span>
-        <img width="50px" [src]="carroSelecionado.foto" alt="Carro">    
+        <img width="150px" [src]="carroSelecionado.foto" alt="Carro">   
+        <div class="duplas">
+            <span id="carroid">Id : {{carroSelecionado.id}}</span>
+            <span id="carropreco">Preço : {{carroSelecionado.preco}}</span>
+        </div>
+       <div class="duplas">
+        <span id="carrovel">Velocidade : {{carroSelecionado.velocidade}}</span>
+        <span id="carroace">Aceleração : {{carroSelecionado.aceleracao}}</span>
+       </div>
+       <div class="duplas">
+        <span id="carrotorq">Torque : {{carroSelecionado.torque}}</span>
+        <span id="carrodrift">Drift : {{carroSelecionado.drift}}</span>
+       </div>
+       <button pButton type="button" class="button"  (click)="alterar()">Comprar</button>
+       
+        
     </div>
     <div (click)="toggle(undefined)"
          class="overlay"></div>

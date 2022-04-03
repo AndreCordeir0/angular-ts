@@ -14,7 +14,6 @@ export class CarrosComponent implements OnInit {
   carro:Jogador = new Jogador()
   mostrar:Boolean =false;
   carroSelecionado: any;
-
   toggle(carroClickado : any){
   this.mostrar =!this.mostrar;
   this.carroSelecionado = carroClickado;

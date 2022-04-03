@@ -1,7 +1,6 @@
 import { AuthService } from './login/auth.service';
 import { CarrosService } from './carros/service/carros.service';
 import { JogadoresService } from './service/jogadores.service';
-import { SegundoModule } from './segundo/segundo.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,22 +16,22 @@ import {DynamicDialogModule} from 'primeng/dynamicdialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PrimeiroComponent } from './primeiro/primeiro.component';
 import { JogadoresComponent } from './jogadores/jogadores.component';
 import { CarrosComponent } from './carros/carros.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import {InputTextModule} from 'primeng/inputtext';
+import { CircuitoComponent } from './circuito/circuito.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PrimeiroComponent,
     JogadoresComponent,
     CarrosComponent,
     HomeComponent,
-    LoginComponent   
+    LoginComponent,
+    CircuitoComponent   
   ],
   imports: [
     BrowserModule,
@@ -42,7 +41,6 @@ import {InputTextModule} from 'primeng/inputtext';
     SkeletonModule,
     TableModule,
     InputTextModule,
-    SegundoModule,
     ButtonModule,
     TabMenuModule,
     HttpClientModule,

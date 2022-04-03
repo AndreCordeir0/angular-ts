@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
+
 .modal {
     background: #fff;
     border-radius: 8px;
@@ -9,6 +11,10 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
   }
   
   .overlay {
@@ -20,8 +26,34 @@
     top: 0;
     width: 100vw;
     z-index: 10;
+    
   }
 
   .click{
       cursor: pointer;
+  }
+  span{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+.duplas{
+  display: flex;
+  width: 100%;
+  line-height: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+align-self: flex-start;}
+  .button{
+    width: 100px;
+    background: rgb(40, 235, 40);
+    border: 1px solid  rgb(40, 235, 40);
+margin-top: 30px;  }
+
+  .button:hover{
+    background: rgb(25, 158, 25);
+  }
+
+  #carropreco{
+    display: flex;
+    align-self: flex-end;
   }
