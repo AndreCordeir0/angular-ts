@@ -19,7 +19,7 @@
             <td>{{jogador.nome}}</td>
             <td>{{jogador.velocidade}}</td>
             <td>{{jogador.aceleracao}}</td>
-            <td><img width="50px" [src]="jogador.foto"[(ngModel)]="jogador.foto" class="click" (click)="toggle(jogador)" alt="Carro"></td>
+            <td><img width="50px" [src]="jogador.foto" class="click" (click)="toggle(jogador)" alt="Carro"></td>
             <td>{{jogador.preco | currency:'BRL'}}</td>
             <td><button pButton type="button" icon="pi pi-shopping-cart" (click)="alterar()" iconPos="left"></button></td>
         </tr>
@@ -32,8 +32,8 @@
    -->
   <ng-container  *ngIf="mostrar && carroSelecionado">
     <div class="modal">
-        <!-- <span>{{carroSelecionado.id}}</span>
-        <img width="50px" [src]="carroSelecionado.foto" alt="Carro"> -->    
+        <span>{{carroSelecionado.id}}</span>
+        <img width="50px" [src]="carroSelecionado.foto" alt="Carro">    
     </div>
     <div (click)="toggle(undefined)"
          class="overlay"></div>
