@@ -26,7 +26,10 @@ import { LoginComponent } from './login/login.component';
 import {InputTextModule} from 'primeng/inputtext';
 import { CircuitoComponent } from './circuito/circuito.component';
 import { SafeHtmlPipeComponent } from './safe-html-pipe/safe-html-pipe.component';
-
+import {AvatarModule} from 'primeng/avatar';
+import {AvatarGroupModule} from 'primeng/avatargroup';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,11 @@ import { SafeHtmlPipeComponent } from './safe-html-pipe/safe-html-pipe.component
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AvatarModule,
     FormsModule,
+    MessagesModule,
+    AvatarGroupModule,
+    MessageModule,
     DynamicDialogModule,
     SkeletonModule,
     MensagensModule,

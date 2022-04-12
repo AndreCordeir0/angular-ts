@@ -1,9 +1,11 @@
+import { usuarioLogin } from './login/usuarioLogin';
 import { JogadoresService } from './service/jogadores.service';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { Jogador } from './objetos/Jogador';
 
 
 
@@ -18,10 +20,11 @@ export class AppComponent {
   public date13!: Date;
   title = 'angular-ts';
   nomeCursos:string[];
+  saldo:any;
   items!: MenuItem[];
-
+  usuario:any;
 constructor(private loginServ:JogadoresService ,private route:Router) {
-
+this.usuario = {nickname:"",saldo:"",}
 }
 mostrarMenu :boolean = false;
 ngOnInit(){
@@ -35,7 +38,14 @@ this.loginServ.mostrarMenuEmitter.subscribe(
   menu => this.mostrarMenu= menu
 );
 
+
 this.loginServ.usuarioEstaAutenticado()
 }
+
+nicks(jogador:Jogador){
+  this.usuario=jogador
+
+}
+
 
 }

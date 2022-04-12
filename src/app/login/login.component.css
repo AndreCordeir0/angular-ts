@@ -47,3 +47,10 @@ outline: 0;
 border: 1px solid rgb(0, 0, 0,0.7);
 margin-bottom: 10px;
 }
+.erro{
+  width: 600px;
+position: relative;
+top: -0px;
+height: 0px;
+
+}

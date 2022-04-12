@@ -15,6 +15,8 @@ export class JogadoresService {
   private readonly APICAR =`${environment.API}carro`
   mostrarMenuEmitter = new EventEmitter<boolean>();
   private usuarioAutenticado:boolean = false
+  nome:any;
+
   constructor(private route:Router,private $http:HttpClient) { }
 
 
@@ -49,9 +51,21 @@ login(usuarioLogin:usuarioLogin):Observable<Jogador>{
 
 usuarioEstaAutenticado(){
   if(this.usuarioAutenticado){
-    return   this.mostrarMenuEmitter.emit(true);
+
+    return this.mostrarMenuEmitter.emit(true);
      ;
   }
   return this.route.navigate(['login'])
+}
+
+recebe(usuarioLogin:usuarioLogin){
+var nome = usuarioLogin;
+return console.log(nome);
+
+
+}
+
+pegaLogin(usuarioLogin:usuarioLogin){
+  return this.recebe(usuarioLogin);
 }
 }

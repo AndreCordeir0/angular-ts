@@ -8,18 +8,18 @@
   }
 
 
- :host ::ng-deep 
+ :host ::ng-deep
    .p-tabmenu .p-tabmenu-nav{
     background: #161d21;
-  
+
 }
- 
+
 
 
 :host ::ng-deep
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link{
   background: #161d21;
- 
+
 }
 
 
@@ -28,8 +28,25 @@
 height: 66px;}
 
 .junta span{
-  left: 900px;
-  top: -55px;
+  left: 1050px;
+  top: -62px;
+
   position: relative;
+}
+
+
+:host ::ng-deep
+.p-avatar img{
+width: 50px;
+height: 50px;
+object-fit: cover;
+border-radius: 50%;
+}
+.junta span p{
+  display: inline-block;
+  position: relative;
+  top: -20px;
+  color: white;
+  font-weight: 600;
 }
 /*63*/
