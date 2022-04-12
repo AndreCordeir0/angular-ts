@@ -1,4 +1,4 @@
 export class usuarioLogin{
-    login: string = '';
+    nickname: string = '';
     senha: string = '';
 }

@@ -1,4 +1,5 @@
-import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { JogadoresService } from './../service/jogadores.service';
 import { Jogador } from './../objetos/Jogador';
 import { EventEmitter, Injectable } from '@angular/core';
@@ -7,13 +8,15 @@ import { usuarioLogin } from './usuarioLogin';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService  {
   private usuarioAutenticado: boolean = false;
   mosrtrarMenuEmitter = new EventEmitter<boolean>();
 
 
 
   constructor(private router :Router,private jogServ:JogadoresService) { }
+
+
 
 
   login(usuarioLogin: usuarioLogin) {
@@ -27,9 +30,9 @@ export class AuthService {
           this.usuarioAutenticado = true;
           this.mosrtrarMenuEmitter.emit(true);
           console.log(this.mosrtrarMenuEmitter);
-          
-          this.router.navigate(['']);      
-    
+
+          this.router.navigate(['']);
+
         } else {
           this.usuarioAutenticado = false;
           this.mosrtrarMenuEmitter.emit(false);
@@ -50,5 +53,5 @@ export class AuthService {
 
 
 
-  
+
 }

@@ -1,3 +1,6 @@
+import { MensagensModule } from './mensagens/mensagens/mensagens.module';
+import { Guards } from './guards/guards';
+import { CircuitoService } from './circuito/service/circuito.service';
 import { AuthService } from './login/auth.service';
 import { CarrosService } from './carros/service/carros.service';
 import { JogadoresService } from './service/jogadores.service';
@@ -22,6 +25,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import {InputTextModule} from 'primeng/inputtext';
 import { CircuitoComponent } from './circuito/circuito.component';
+import { SafeHtmlPipeComponent } from './safe-html-pipe/safe-html-pipe.component';
 
 
 @NgModule({
@@ -31,7 +35,8 @@ import { CircuitoComponent } from './circuito/circuito.component';
     CarrosComponent,
     HomeComponent,
     LoginComponent,
-    CircuitoComponent   
+    CircuitoComponent,
+    SafeHtmlPipeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,7 @@ import { CircuitoComponent } from './circuito/circuito.component';
     FormsModule,
     DynamicDialogModule,
     SkeletonModule,
+    MensagensModule,
     TableModule,
     InputTextModule,
     ButtonModule,
@@ -47,9 +53,9 @@ import { CircuitoComponent } from './circuito/circuito.component';
     GMapModule,
     DockModule,
     RouterModule
-    
+
   ],
-  providers: [JogadoresService,CarrosService,AuthService],
+  providers: [JogadoresService,CarrosService,AuthService,Guards,CircuitoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

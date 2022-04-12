@@ -2,13 +2,14 @@
 <div class="centralizar">
     <div class="grid">
         <div class="components">
+          <app-mensagens *ngIf="usuarioLogin.nickname.length == 0 && campoLogin.touched" mensagem="Login e Senha Obrigatório"></app-mensagens>
             <label for="login">Login</label>
-            <input type="text"  [(ngModel)]="usuarioLogin.login" placeholder="Informe seu Login" pInputText />
-            <label for="senha" >Senha</label>
-            <input type="password"  [(ngModel)]="usuarioLogin.senha" placeholder="Informe sua Senha" pInputText />
-            <p-button label="Entrar" (onClick)="login()" aria-required="true" iconPos="left"></p-button>
+            <input type="text"  [(ngModel)]="usuarioLogin.nickname" #campoLogin="ngModel"  placeholder="Informe seu Login" pInputText />
 
+            <label for="senha" >Senha</label>
+            <input type="password" required #campoSenha="ngModel"  [(ngModel)]="usuarioLogin.senha" placeholder="Informe sua Senha" pInputText />
+
+            <p-button label="Entrar" (onClick)="login();recebe(usuarioLogin.nickname,usuarioLogin.senha)" aria-required="true"[disabled]="usuarioLogin.senha.length == 0" iconPos="left"></p-button>
         </div>
     </div>
-
 </div>

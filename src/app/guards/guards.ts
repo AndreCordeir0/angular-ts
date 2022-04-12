@@ -1,3 +1,4 @@
+import { JogadoresService } from './../service/jogadores.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -8,10 +9,10 @@ import { AuthService } from '../login/auth.service';
 })
 export class Guards implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private jogServ: JogadoresService, private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<boolean> | boolean {
-    if (this.authService.usuarioEstaAutenticado()) {
+   if (this.jogServ.usuarioEstaAutenticado()) {
       return true;
     }
 

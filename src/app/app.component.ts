@@ -1,3 +1,5 @@
+import { JogadoresService } from './service/jogadores.service';
+import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
@@ -18,11 +20,9 @@ export class AppComponent {
   nomeCursos:string[];
   items!: MenuItem[];
 
-letola = 10;
-constructor(private auth:AuthService,private route:Router) {
- 
-}
+constructor(private loginServ:JogadoresService ,private route:Router) {
 
+}
 mostrarMenu :boolean = false;
 ngOnInit(){
   this.items = [
@@ -31,7 +31,11 @@ ngOnInit(){
     {label: 'Carros', icon: 'pi pi-fw pi-car',routerLink:['/carros']},
     {label: 'Corrida', icon: 'pi pi-fw pi-flag',routerLink:['/corrida']}
 ];
-this.mostrarMenu =true;
+this.loginServ.mostrarMenuEmitter.subscribe(
+  menu => this.mostrarMenu= menu
+);
+
+this.loginServ.usuarioEstaAutenticado()
 }
 
 }

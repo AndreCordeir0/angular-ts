@@ -1,7 +1,7 @@
 
 <p-table  [value]="carros" responsiveLayout="scroll"  >
     <ng-template class="css2" pTemplate="header">
-       
+
         <tr  class="css2">
             <th>Id</th>
             <th>Nome</th>
@@ -13,9 +13,9 @@
         </tr>
     </ng-template>
 
-    <ng-template pTemplate="body" let-jogador   >
+    <ng-template  pTemplate="body" let-jogador   >
         <tr>
-            <td>{{jogador.id}}</td>
+            <td class="mb-5">{{jogador.id}}</td>
             <td>{{jogador.nome}}</td>
             <td>{{jogador.velocidade}}</td>
             <td>{{jogador.aceleracao}}</td>
@@ -24,7 +24,7 @@
             <td><button pButton type="button" icon="pi pi-shopping-cart" (click)="alterar()" iconPos="left"></button></td>
         </tr>
     </ng-template>
-   
+
 </p-table>
 <!-- <button (click)="toggle()">
     Mostrar modal
@@ -32,7 +32,8 @@
    -->
   <ng-container  *ngIf="mostrar && carroSelecionado">
     <div class="modal">
-        <img width="150px" [src]="carroSelecionado.foto" alt="Carro">   
+        <img width="150px" [src]="carroSelecionado.foto" alt="Carro">
+        <p>{{carroSelecionado.nome}}</p>
         <div class="duplas">
             <span id="carroid">Id : {{carroSelecionado.id}}</span>
             <span id="carropreco">Preço : {{carroSelecionado.preco}}</span>
@@ -46,8 +47,8 @@
         <span id="carrodrift">Drift : {{carroSelecionado.drift}}</span>
        </div>
        <button pButton type="button" class="button"  (click)="alterar()">Comprar</button>
-       
-        
+
+
     </div>
     <div (click)="toggle(undefined)"
          class="overlay"></div>
