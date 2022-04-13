@@ -1,3 +1,4 @@
+import { Jogador } from './../objetos/Jogador';
 import { AppComponent } from './../app.component';
 import { Router } from '@angular/router';
 import { JogadoresService } from './../service/jogadores.service';
@@ -13,7 +14,8 @@ import { Message } from 'primeng/api';
 })
 export class LoginComponent implements OnInit {
 
-  usuarioLogin: usuarioLogin = new usuarioLogin()
+  // usuarioLogin: usuarioLogin = new usuarioLogin()
+  jogador:Jogador = new Jogador();
   @Output() nick = new EventEmitter<string>();
   msgs1: Message[];
 
@@ -27,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   mostrarMenuEmitter = new EventEmitter<boolean>();
   login = () => {
-    this.jogServ.login(this.usuarioLogin).subscribe(succes =>{
+    this.jogServ.login(this.jogador).subscribe(succes =>{
       console.log("autenticado");
       this.jogServ.mostrarMenuEmitter.emit(true)
       this.usuarioAutenticado = true;

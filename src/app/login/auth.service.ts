@@ -19,33 +19,33 @@ export class AuthService  {
 
 
 
-  login(usuarioLogin: usuarioLogin) {
-    this.jogServ.login(usuarioLogin).subscribe(
-      (response: Jogador) => {
-        console.log("Deu certo: ");
-        console.log(response);
+  // login(jogador: Jogador) {
+  //   this.jogServ.login(jogador).subscribe(
+  //     (response: Jogador) => {
+  //       console.log("Deu certo: ");
+  //       console.log(response);
 
-        if (response) {
+  //       if (response) {
 
-          this.usuarioAutenticado = true;
-          this.mosrtrarMenuEmitter.emit(true);
-          console.log(this.mosrtrarMenuEmitter);
+  //         this.usuarioAutenticado = true;
+  //         this.mosrtrarMenuEmitter.emit(true);
+  //         console.log(this.mosrtrarMenuEmitter);
 
-          this.router.navigate(['']);
+  //         this.router.navigate(['']);
 
-        } else {
-          this.usuarioAutenticado = false;
-          this.mosrtrarMenuEmitter.emit(false);
-        }
-      },
-      (error: any) => {
-        console.error("Login ou Senha incorreta(s)!");
-      });
-  }
+  //       } else {
+  //         this.usuarioAutenticado = false;
+  //         this.mosrtrarMenuEmitter.emit(false);
+  //       }
+  //     },
+  //     (error: any) => {
+  //       console.error("Login ou Senha incorreta(s)!");
+  //     });
+  // }
 
-  usuarioEstaAutenticado() {
-    return this.usuarioAutenticado;
-  }
+  // usuarioEstaAutenticado() {
+  //   return this.usuarioAutenticado;
+  // }
 
 
 

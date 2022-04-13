@@ -25,7 +25,11 @@
 
 
 .junta{
-height: 66px;}
+height: 66px;
+margin: 0 auto;
+
+width: 1300px;
+}
 
 .junta span{
   left: 1050px;
@@ -46,7 +50,16 @@ border-radius: 50%;
   display: inline-block;
   position: relative;
   top: -20px;
+
   color: white;
   font-weight: 600;
 }
 /*63*/
+#logout{
+  padding-left: 10px;
+  color: rgb(117, 32, 32);
+  cursor: pointer;
+}
+#logout:hover{
+  color: rgb(157, 46, 46);
+}

@@ -40,10 +40,10 @@ return this.$http.get<Jogador>(`$(this.API)/${id}`)
 }
 
 
-login(usuarioLogin:usuarioLogin):Observable<Jogador>{
+login(jogador:Jogador):Observable<Jogador>{
   this.mostrarMenuEmitter.emit(false)
   this.usuarioAutenticado = false;
-  return this.$http.post<Jogador>(`${this.API}/login`,usuarioLogin)
+  return this.$http.post<Jogador>(`${this.API}/login`,jogador)
 
 
 }
@@ -58,14 +58,12 @@ usuarioEstaAutenticado(){
   return this.route.navigate(['login'])
 }
 
-recebe(usuarioLogin:usuarioLogin){
-var nome = usuarioLogin;
-return console.log(nome);
-
+usuarioNaoEstaAutenticado(){
+   this.mostrarMenuEmitter.emit(false);
+   this.usuarioAutenticado=false
+  return this.route.navigate(['login'])
 
 }
 
-pegaLogin(usuarioLogin:usuarioLogin){
-  return this.recebe(usuarioLogin);
-}
+
 }

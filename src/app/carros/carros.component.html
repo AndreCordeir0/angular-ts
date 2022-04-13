@@ -19,7 +19,7 @@
             <td>{{jogador.nome}}</td>
             <td>{{jogador.velocidade}}</td>
             <td>{{jogador.aceleracao}}</td>
-            <td><img width="50px" [src]="jogador.foto" class="click" (click)="toggle(jogador)" alt="Carro"></td>
+            <td><img width="50px" [src]="jogador.foto " class="click" (click)="toggle(jogador)" alt="Carro"></td>
             <td>{{jogador.preco | currency:'BRL'}}</td>
             <td><button pButton type="button" icon="pi pi-shopping-cart" (click)="alterar()" iconPos="left"></button></td>
         </tr>

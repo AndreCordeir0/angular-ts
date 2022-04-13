@@ -8,14 +8,14 @@
     <div class="grid">
 
         <div class="components">
-          <app-mensagens *ngIf="usuarioLogin.nickname.length == 0 && campoLogin.touched" mensagem="Login e Senha Obrigatório"></app-mensagens>
+          <app-mensagens *ngIf="jogador.nickname?.length == 0 && campoLogin.touched" mensagem="Login e Senha Obrigatório"></app-mensagens>
             <label for="login">Login</label>
-            <input type="text"  [(ngModel)]="usuarioLogin.nickname" #campoLogin="ngModel"  placeholder="Informe seu Login" pInputText />
+            <input type="text"  [(ngModel)]="jogador.nickname" #campoLogin="ngModel"  placeholder="Informe seu Login" pInputText />
 
             <label for="senha">Senha</label>
-            <input type="password" required #campoSenha="ngModel"  [(ngModel)]="usuarioLogin.senha" placeholder="Informe sua Senha" pInputText />
+            <input type="password" required #campoSenha="ngModel"  [(ngModel)]="jogador.senha" placeholder="Informe sua Senha" pInputText />
 
-            <p-button  label="Entrar"(keyup.enter)="login()" (onClick)="login();recebe(usuarioLogin.nickname)" aria-required="true"[disabled]="usuarioLogin.senha.length == 0" iconPos="left"></p-button>
+            <p-button  label="Entrar"(keyup.enter)="login()" (onClick)="login();recebe(jogador)" aria-required="true"[disabled]="jogador.senha?.length == 0" iconPos="left"></p-button>
         </div>
     </div>
 </div>

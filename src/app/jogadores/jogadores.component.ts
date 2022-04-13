@@ -9,15 +9,15 @@ import { JogadoresService } from '../service/jogadores.service';
   styleUrls: ['./jogadores.component.css']
 })
 export class JogadoresComponent implements OnInit {
- 
+
 
 jogadores :Array<Jogador>=[]
 
 
 
 
-constructor( private jogadoresService:JogadoresService) {  
-  
+constructor( private jogadoresService:JogadoresService) {
+
 }
 
   ngOnInit(): void {
@@ -28,7 +28,7 @@ listarJogadores(){
     setTimeout(() => {
       this.jogadores=jogadores;
 
-     
+
     }, 400);
   });
 }

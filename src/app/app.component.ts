@@ -22,6 +22,7 @@ export class AppComponent {
   nomeCursos:string[];
   saldo:any;
   items!: MenuItem[];
+
   usuario:any;
 constructor(private loginServ:JogadoresService ,private route:Router) {
 this.usuario = {nickname:"",saldo:"",}
@@ -39,13 +40,17 @@ this.loginServ.mostrarMenuEmitter.subscribe(
 );
 
 
+
 this.loginServ.usuarioEstaAutenticado()
-}
 
+}
+logout(){
+this.loginServ.usuarioNaoEstaAutenticado();
+}
 nicks(jogador:Jogador){
-  this.usuario=jogador
+  this.usuario=jogador.nickname
+  this.saldo=jogador.saldo
 
 }
-
 
 }
